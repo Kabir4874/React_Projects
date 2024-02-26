@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Tours from "./components/Tours";
-import  data  from "./data";
+import data from "./data";
 
 function App() {
-  const [tours,setTours]= useState(data)
+  const [tours, setTours] = useState(data);
   return (
-      <div>
-        <Tours tours= {tours}></Tours>
-      </div>
+    <div>
+      <Tours tours={tours}></Tours>
+    </div>
   );
 }
 
