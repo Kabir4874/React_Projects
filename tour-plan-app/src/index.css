@@ -46,3 +46,18 @@ body {
   aspect-ratio: 1/1;
   object-fit: cover;
 }
+.tour-info {
+  margin: 20px 5px;
+}
+.tour-price {
+  color: #1faa59;
+  font-size: 1.3rem;
+}
+.tour-name {
+  font-size: 1.5rem;
+}
+.read-more {
+  color: #12b0e8;
+  text-transform: capitalize;
+  cursor: pointer;
+}
