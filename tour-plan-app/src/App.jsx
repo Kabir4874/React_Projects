@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Tours from "./components/Tours";
 import data from "./data";
+import './index.css';
 
 function App() {
   const [tours, setTours] = useState(data);
@@ -12,12 +13,12 @@ function App() {
     return (
       <div className="refresh">
         <h2>No Tours Left</h2>
-        <button onClick={() => setTours(data)}>Refresh</button>
+        <button className="btn-white" onClick={() => setTours(data)}>Refresh</button>
       </div>
     );
   }
   return (
-    <div>
+    <div className="App">
       <Tours tours={tours} removeTour={removeTour}></Tours>
     </div>
   );
