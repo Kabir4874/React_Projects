@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 const Card = ({ id, name, info, image, price, removeTour }) => {
@@ -29,3 +30,12 @@ const Card = ({ id, name, info, image, price, removeTour }) => {
 };
 
 export default Card;
+
+Card.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  info: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.string,
+  removeTour: PropTypes.func,
+};

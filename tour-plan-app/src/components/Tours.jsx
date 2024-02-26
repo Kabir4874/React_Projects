@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Card from "./Card";
 
 const Tours = ({ tours, removeTour }) => {
@@ -16,3 +17,8 @@ const Tours = ({ tours, removeTour }) => {
 };
 
 export default Tours;
+
+Tours.propTypes={
+  tours:PropTypes.array,
+  removeTour: PropTypes.func
+}
