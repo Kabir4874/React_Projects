@@ -11,7 +11,7 @@ const Cards = ({ courses }) => {
     return allCourses;
   };
   return (
-    <div>
+    <div className=" flex flex-wrap justify-center gap-4 mb-4">
       {!courses ? (
         <div>
           <p>No Data Found</p>
