@@ -8,12 +8,19 @@ const Cards = ({ courses }) => {
         allCourses.push(course);
       });
     });
+    return allCourses;
   };
   return (
     <div>
-      {allCourses.map((course) => {
-       return <Card key={course.id} course={course} />;
-      })}
+      {!courses ? (
+        <div>
+          <p>No Data Found</p>
+        </div>
+      ) : (
+        getCourses().map((course) => {
+          return <Card key={course.id} course={course} />;
+        })
+      )}
     </div>
   );
 };
