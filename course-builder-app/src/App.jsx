@@ -28,7 +28,7 @@ function App() {
       <div>
         <Navbar />
       </div>
-      <div>
+      <div className=" bg-bgDark2">
         <div>
           <Filter filterData={filterData} />
         </div>
