@@ -1,9 +1,11 @@
-import React from 'react'
-
-const Filter = () => {
+const Filter = ({ filterData }) => {
   return (
-    <div>Filter</div>
-  )
-}
+    <div>
+      {filterData.map((data) => {
+        return <button key={data.id}>{data.title}</button>;
+      })}
+    </div>
+  );
+};
 
-export default Filter
+export default Filter;
