@@ -1,3 +1,5 @@
+import Card from "./Card";
+
 const Cards = ({ courses }) => {
   let allCourses = [];
   const getCourses = () => {
@@ -6,11 +8,12 @@ const Cards = ({ courses }) => {
         allCourses.push(course);
       });
     });
-    return allCourses;
   };
   return (
     <div>
-        Helkj 
+      {allCourses.map((course) => {
+       return <Card key={course.id} course={course} />;
+      })}
     </div>
   );
 };

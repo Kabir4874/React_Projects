@@ -24,7 +24,7 @@ function App() {
     <div>
       <Navbar />
       <Filter filterData={filterData} />
-      <Cards courses={courses}/>
+      <Cards courses={courses} />
     </div>
   );
 }
