@@ -14,6 +14,7 @@ const Cards = ({ courses, category }) => {
       }); 
       return allCourses;
     } else {
+      console.log(category);
       return courses[category];
     }
   };
@@ -43,4 +44,5 @@ export default Cards;
 
 Cards.propTypes = {
   courses: PropTypes.object,
+  category: PropTypes.string,
 };

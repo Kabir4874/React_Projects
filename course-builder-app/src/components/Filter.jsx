@@ -30,6 +30,6 @@ export default Filter;
 
 Filter.propTypes = {
   filterData: PropTypes.array,
-  category: PropTypes.array,
+  category: PropTypes.string,
   setCategory: PropTypes.func,
 };
