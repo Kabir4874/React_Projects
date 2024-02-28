@@ -1,4 +1,5 @@
 import Testimonial from "./components/Testimonial"
+import reviews from './Data'
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
       <div>
         <h1>Our Testimonials</h1>
         <div></div>
-        <Testimonial/>
+        <Testimonial reviews={reviews}/>
       </div>
     </div>
   )

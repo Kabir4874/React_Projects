@@ -1,9 +1,15 @@
-import React from 'react'
+import Card from "./Card"
+import PropTypes from 'prop-types';
 
-const Testimonial = () => {
+const Testimonial = ({reviews}) => {
   return (
-    <div>Testimonial</div>
+    <div>
+        <Card review={reviews[0]}/>
+    </div>
   )
+}
+Testimonial.propTypes={
+    reviews:PropTypes.array,
 }
 
 export default Testimonial
