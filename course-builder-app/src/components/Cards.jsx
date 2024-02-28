@@ -1,7 +1,10 @@
+import { useState } from "react";
 import Card from "./Card";
+import PropTypes from "prop-types";
 
 const Cards = ({ courses }) => {
   let allCourses = [];
+  const [likedCourses, setLikedCourses] = useState([]);
   const getCourses = () => {
     Object.values(courses).forEach((courseCategory) => {
       courseCategory.forEach((course) => {
@@ -18,7 +21,14 @@ const Cards = ({ courses }) => {
         </div>
       ) : (
         getCourses().map((course) => {
-          return <Card key={course.id} course={course} />;
+          return (
+            <Card
+              key={course.id}
+              course={course}
+              likedCourses={likedCourses}
+              setLikedCourses={setLikedCourses}
+            />
+          );
         })
       )}
     </div>
@@ -26,3 +36,7 @@ const Cards = ({ courses }) => {
 };
 
 export default Cards;
+
+Cards.propTypes = {
+  courses: PropTypes.object,
+};

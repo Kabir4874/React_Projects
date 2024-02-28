@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const Filter = ({ filterData }) => {
   return (
     <div className=" w-11/12 flex flex-wrap max-w-max space-x-4 gap-y-4 mx-auto py-4 justify-center">
@@ -22,3 +23,7 @@ export default Filter;
 //       ? "bg-opacity-60 border-white"
 //       : " bg-opacity-40 border-transparent"
 //   }
+
+Filter.propTypes = {
+  filterData: PropTypes.array,
+};
