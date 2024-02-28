@@ -11,7 +11,7 @@ const Cards = ({ courses, category }) => {
         courseCategory.forEach((course) => {
           allCourses.push(course);
         });
-      }); 
+      });
       return allCourses;
     } else {
       console.log(category);

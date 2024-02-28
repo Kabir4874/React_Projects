@@ -36,7 +36,7 @@ const Card = ({ course, likedCourses, setLikedCourses }) => {
         </p>
         <p className=" mt-2 text-white">
           {course.description.length > 100
-            ? course.description.substr(0, 100)+"...."
+            ? course.description.substr(0, 100) + "...."
             : course.description}
         </p>
       </div>
