@@ -13,6 +13,7 @@ function App() {
     comments: false,
     candidates: false,
     offers: false,
+    pushNotification: "",
   });
 
   function changeHandler(event) {
@@ -22,9 +23,15 @@ function App() {
       [name]: type === "checkbox" ? checked : value,
     }));
   }
+
+  function submitHandler(event) {
+    event.preventDefault();
+    console.log("Printing Form Data: ");
+    console.log(formData);
+  }
   return (
     <div className="flex flex-col items-center mt-2">
-      <form>
+      <form onSubmit={submitHandler}>
         <label htmlFor="firstName">First Name</label>
         <br />
         <input
@@ -73,10 +80,10 @@ function App() {
           onChange={changeHandler}
           className="border-2"
         >
-          <option>India</option>
-          <option>United States</option>
-          <option>Canada</option>
-          <option>Mexico</option>
+          <option value="india">India</option>
+          <option value="united states">United States</option>
+          <option value="canada">Canada</option>
+          <option value="mexico">Mexico</option>
         </select>
 
         <br />
@@ -130,7 +137,8 @@ function App() {
           placeholder="110077"
           className=" border-2"
         />
-
+        <br />
+        <br />
         <fieldset>
           <legend>By Email</legend>
           <div className="flex">
@@ -138,7 +146,7 @@ function App() {
               id="comments"
               name="comments"
               type="checkbox"
-              value={formData.comments}
+              checked={formData.comments}
               onChange={changeHandler}
             />
             <div>
@@ -151,12 +159,12 @@ function App() {
               id="candidates"
               name="candidates"
               type="checkbox"
-              value={formData.candidates}
+              checked={formData.candidates}
               onChange={changeHandler}
             />
             <div>
-              <label htmlFor="candidates">Comments</label>
-              <p>Get notified when someones posts a comment on a posting.</p>
+              <label htmlFor="candidates">Candidates</label>
+              <p>Get notified when a candidate applies for a job.</p>
             </div>
           </div>
           <div className="flex">
@@ -164,15 +172,51 @@ function App() {
               id="offers"
               name="offers"
               type="checkbox"
-              value={formData.offers}
+              checked={formData.offers}
               onChange={changeHandler}
             />
             <div>
-              <label htmlFor="offers">Comments</label>
-              <p>Get notified when someones posts a comment on a posting.</p>
+              <label htmlFor="offers">Offers</label>
+              <p>Get notified when a candidate accepts or rejects an offer.</p>
             </div>
           </div>
         </fieldset>
+        <br />
+        <fieldset>
+          <legend>Push Notifications</legend>
+          <p>These are delivered via SMS to your mobile phone.</p>
+          <input
+            id="pushEverything"
+            name="pushNotification"
+            type="radio"
+            onChange={changeHandler}
+            value="Everything"
+          />
+          <label htmlFor="pushEverything">Everything</label>
+          <br />
+
+          <input
+            id="pushEmail"
+            name="pushNotification"
+            type="radio"
+            onChange={changeHandler}
+            value="Same as Email"
+          />
+          <label htmlFor="pushEmail">Same as Email</label>
+          <br />
+
+          <input
+            id="pushNothing"
+            name="pushNotification"
+            type="radio"
+            onChange={changeHandler}
+            value="No Push Notifications"
+          />
+          <label htmlFor="pushNothing">No Push Notifications</label>
+        </fieldset>
+        <button className=" bg-blue-500 text-white font-bold rounded py-2 px-4">
+          Save
+        </button>
       </form>
     </div>
   );
