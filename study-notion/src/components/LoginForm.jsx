@@ -25,7 +25,7 @@ const LoginForm = () => {
           type="email"
           value={formData.email}
           onChange={changeHandler}
-          placeholder="Enter email id"
+          placeholder="Enter email Address"
           name="email"
         />
       </label>
