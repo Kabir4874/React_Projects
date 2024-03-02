@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { toast } from "react-toastify";
 
-const SignupForm = () => {
+const SignupForm = ({setIsLoggedIn}) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -16,13 +17,23 @@ const SignupForm = () => {
       [event.target.name]: event.target.value,
     }));
   }
+
+  function submitHandler(event) {
+    event.preventDefault();
+    if (formData.password != formData.confirmPassword) {
+      toast.error("Password do not match");
+      return;
+    }
+    setIsLoggedIn(true);
+    toast.success("Account Created");
+  }
   return (
     <div>
       <div>
         <button>Student</button>
         <button>Instructor</button>
       </div>
-      <form>
+      <form onSubmit={submitHandler}>
         <div>
           <label>
             <p>

@@ -1,7 +1,7 @@
 const Home = () => {
-  return (<div className="flex justify-center items-center">
-    <input type="password"/>
-  </div>);
+  return (
+    <div className="flex justify-center items-center">This is home page</div>
+  );
 };
 
 export default Home;
