@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const SignupForm = ({setIsLoggedIn}) => {
+const SignupForm = ({ setIsLoggedIn }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -26,6 +28,7 @@ const SignupForm = ({setIsLoggedIn}) => {
     }
     setIsLoggedIn(true);
     toast.success("Account Created");
+    navigate("/dashboard");
   }
   return (
     <div>
