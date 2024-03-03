@@ -8,7 +8,7 @@ import { useState } from "react";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-    <div>
+    <div className=" w-screen h-screen bg-richblack-900 flex flex-col">
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 
       <Routes>
