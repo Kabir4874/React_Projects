@@ -12,7 +12,7 @@ const Navbar = (props) => {
         <img src={logo} alt="Logo" width={160} height={32} loading="lazy" />
       </Link>
       <nav>
-        <ul className="flex gap-x-6 text-white">
+        <ul className="flex gap-x-6 text-richblack-100">
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -24,7 +24,7 @@ const Navbar = (props) => {
           </li>
         </ul>
       </nav>
-      <div className="flex items-center gap-x-4 text-white">
+      <div className="flex items-center gap-x-4 text-richblack-100">
         {!isLoggedIn && (
           <Link to="/login">
             <button className=" bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">
