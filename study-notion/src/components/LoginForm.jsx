@@ -39,12 +39,13 @@ const LoginForm = ({ setIsLoggedIn }) => {
           onChange={changeHandler}
           placeholder="Enter email Address"
           name="email"
+          className=" bg-richblack-800 rounded-lg text-richblack-5 w-full p-[12px]"
         />
       </label>
 
-      <label>
-        <p>
-          Password<sup>*</sup>
+      <label className=" w-full relative">
+        <p className=" text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+          Password<sup className=" text-pink-200">*</sup>
         </p>
         <input
           required
@@ -53,16 +54,28 @@ const LoginForm = ({ setIsLoggedIn }) => {
           onChange={changeHandler}
           placeholder="Enter password"
           name="password"
+          className=" bg-richblack-800 rounded-lg text-richblack-5 w-full p-[12px]"
         />
 
-        <span onClick={() => setShowPassword((prev) => !prev)}>
-          {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+        <span
+          onClick={() => setShowPassword((prev) => !prev)}
+          className=" absolute right-3 top-[38px] cursor-pointer"
+        >
+          {showPassword ? (
+            <AiOutlineEyeInvisible fontSize={24} fill="#afb2bf" />
+          ) : (
+            <AiOutlineEye fontSize={24} fill="#afb2bf" />
+          )}
         </span>
         <Link to="#">
-          <p>Forgot Password?</p>
+          <p className=" text-xs mt-1 text-blue-100 text-right">
+            Forgot Password?
+          </p>
         </Link>
       </label>
-      <button>Sign In</button>
+      <button className=" bg-yellow-50 rounded-[8px] font-medium text-richblack-900 px-[12px] py-[8px] mt-6">
+        Sign In
+      </button>
     </form>
   );
 };
