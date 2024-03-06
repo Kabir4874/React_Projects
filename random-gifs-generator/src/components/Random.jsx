@@ -1,30 +1,11 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import Spinner from "./Spinner";
-
-const API_KEY = "TSMkTCNl9Cv1ytCCaRKQ3OSaL72sKxnS";
+import useGif from "../hooks/useGif";
 
 const Random = () => {
-  const [gif, setGif] = useState("");
-  const [loading, setLoading] = useState(false);
-  async function fetchData() {
-    try {
-      setLoading(true);
-      const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
-      const { data } = await axios.get(url);
-      const imageSource = data.data.images.downsized_large.url;
-      setGif(imageSource);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  useEffect(() => {
-    fetchData();
-  }, []);
   function clickHandler() {
     fetchData();
   }
+  const { gif, loading, fetchData } = useGif();
   return (
     <div className=" w-1/2 bg-green-500 rounded-lg border border-black flex flex-col items-center gap-y-5 mt-3">
       <h1 className=" mt-4 text-2xl underline uppercase font-bold">
