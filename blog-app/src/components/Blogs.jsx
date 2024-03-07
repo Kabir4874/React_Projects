@@ -9,8 +9,8 @@ const Blogs = () => {
       {loading ? (
         <Spinner />
       ) : posts.length === 0 ? (
-        <div>
-          <p>No Post Found</p>
+        <div className=" w-full h-full flex items-center justify-center">
+          <p className=" text-3xl">No Post Found</p>
         </div>
       ) : (
         posts.map((post) => (
