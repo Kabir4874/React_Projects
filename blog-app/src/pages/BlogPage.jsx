@@ -1,15 +1,16 @@
 import { useContext, useEffect, useState } from "react";
-import { useLocation, useNavigation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import Header from "../components/Header";
 import Spinner from "../components/Spinner";
 import BlogDetails from "../components/BlogDetails";
+import { baseUrl } from "../BaseUrl";
 
 const BlogPage = () => {
   const [blog, setBlog] = useState(null);
   const [relatedBlogs, setRelatedBlogs] = useState([]);
   const location = useLocation();
-  const navigation = useNavigation();
+  const navigation = useNavigate();
   const { setLoading, loading } = useContext(AppContext);
   const blogId = location.pathname.split("/").at(-1);
 

@@ -34,7 +34,6 @@ export default function AppContextProvider({ children }) {
   }
   function handlePageChange(page) {
     setPage(page);
-    fetchBlogPosts(page);
   }
   const value = {
     posts,
