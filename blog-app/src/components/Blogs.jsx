@@ -28,7 +28,7 @@ const Blogs = () => {
                   <span
                     key={index}
                     className=" text-blue-500 underline text-sm"
-                  >{`#${tag.toLowerCase().split(" ").join("_")} `}</span>
+                  >{`#${tag.toLowerCase()} `}</span>
                 );
               })}
             </div>
