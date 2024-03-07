@@ -5,7 +5,7 @@ import Spinner from "./Spinner";
 const Blogs = () => {
   const { posts, loading } = useContext(AppContext);
   return (
-    <div>
+    <div className=" w-11/12 max-w-[450px] py-3 flex flex-col gap-y-7">
       {loading ? (
         <Spinner />
       ) : posts.length === 0 ? (
@@ -15,9 +15,10 @@ const Blogs = () => {
       ) : (
         posts.map((post) => (
           <div key={post.id}>
-            <p className=" font-bold">{post.title}</p>
-            <p>
-              By <span>{post.author}</span> on <span>{post.category}</span>
+            <p className=" font-bold text-xs">{post.title}</p>
+            <p className="text-[10px]">
+              By <span className=" italic">{post.author}</span> on{" "}
+              <span className=" underline font-bold">{post.category}</span>
             </p>
             <p>Posted on {post.date}</p>
             <p>{post.content}</p>

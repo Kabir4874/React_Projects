@@ -13,6 +13,9 @@ const Pagination = () => {
           <button onClick={() => handlePageChange(page + 1)}>Next</button>
         )}
       </div>
+      <p>
+        Page {page} of {totalPages}
+      </p>
     </div>
   );
 };

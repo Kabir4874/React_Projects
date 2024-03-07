@@ -1,10 +1,10 @@
-
-
 const Header = () => {
   return (
-    <div>
+    <div className="border shadow-md py-4 w-full">
       <header>
-        <h1>CodeHelp Blogs</h1>
+        <h1 className=" text-xl font-bold text-center uppercase">
+          CodeHelp Blogs
+        </h1>
       </header>
     </div>
   );
