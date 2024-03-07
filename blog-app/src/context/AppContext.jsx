@@ -3,7 +3,7 @@ import { baseUrl } from "../BaseUrl";
 
 export const AppContext = createContext();
 
-function AppContextProvider({ children }) {
+export default function AppContextProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useState([]);
   const [page, setPage] = useState();
