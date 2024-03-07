@@ -1,9 +1,10 @@
 import { useContext, useEffect } from "react";
-import Blogs from "./components/Blogs";
-import Header from "./components/Header";
-import Pagination from "./components/Pagination";
 import { AppContext } from "./context/AppContext";
 import { Route, Routes, useLocation, useSearchParams } from "react-router-dom";
+import Home from "./pages/Home";
+import BlogPage from "./pages/BlogPage";
+import TagPage from "./pages/Tagpage";
+import CategoryPage from "./pages/CategoryPage";
 
 function App() {
   const { fetchBlogPosts } = useContext(AppContext);
@@ -27,7 +28,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blog/:blogId" element={<BlogPage />} />
         <Route path="/tag/:tag" element={<TagPage />} />
-        <Route path="/categories/:category" element={<CtegoryPage />} />
+        <Route path="/categories/:category" element={<CategoryPage />} />
       </Routes>
     </div>
   );
