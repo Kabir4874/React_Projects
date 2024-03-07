@@ -52,7 +52,9 @@ const BlogPage = () => {
           ))}
         </div>
       ) : (
-        <div> No Blog Found</div>
+        <div>
+          <p>No Blog Found</p>
+        </div>
       )}
     </div>
   );
