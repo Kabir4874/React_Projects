@@ -39,6 +39,8 @@ function AppContextProvider({ children }) {
     setPage,
     totalPages,
     setTotalPages,
+    fetchBlogPosts,
+    handlePageChange,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
