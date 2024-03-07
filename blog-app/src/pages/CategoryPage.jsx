@@ -1,5 +1,7 @@
 import { useLocation, useNavigation } from "react-router-dom";
 import Header from "../components/Header";
+import Blogs from "../components/Blogs";
+import Pagination from "../components/Pagination";
 
 const CategoryPage = () => {
   const navigation = useNavigation();
@@ -14,6 +16,8 @@ const CategoryPage = () => {
           Blogs on <span>{category}</span>
         </h2>
       </div>
+      <Blogs />
+      <Pagination />
     </div>
   );
 };
