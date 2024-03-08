@@ -12,7 +12,7 @@ const Product = ({ post }) => {
   };
   const removeFromCart = () => {
     dispatch(remove(post.id));
-    toast.success("Item removed from Cart");
+    toast.error("Item removed from Cart");
   };
   return (
     <div>
