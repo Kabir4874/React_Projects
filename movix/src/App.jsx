@@ -7,6 +7,8 @@ import Home from "./pages/home/Home.jsx";
 import Details from "./pages/details/Details.jsx";
 import Explore from "./pages/explore/Explore.jsx";
 import PageNotFound from "./pages/404/PageNotFound.jsx";
+import Header from "./components/header/Header.jsx";
+import Footer from "./components/footer/Footer.jsx";
 function App() {
   const dispatch = useDispatch();
   const { url } = useSelector((state) => state.home);
@@ -16,17 +18,20 @@ function App() {
 
   const apiTesting = () => {
     fetchDataFromApi("/movie/popular").then((res) => {
-      console.log(res);
       dispatch(getApiConfiguration(res));
     });
   };
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/:mediaType/:id" element={<Details />} />
-      <Route path="/search/:query" element={<Explore />} />
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+    <div>
+      {/* <Header /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:mediaType/:id" element={<Details />} />
+        <Route path="/search/:query" element={<Explore />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+      {/* <Footer /> */}
+    </div>
   );
 }
 
