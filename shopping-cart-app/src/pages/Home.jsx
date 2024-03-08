@@ -10,10 +10,11 @@ const Home = () => {
     setLoading(true);
     try {
       const res = await fetch(API_URL);
-      const data = res.json();
+      const data = await res.json();
       setPosts(data);
     } catch (error) {
       console.log(error);
+      setPosts([]);
     }
     setLoading(false);
   }
