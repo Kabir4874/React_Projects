@@ -6,7 +6,7 @@ export const CartSlice= createSlice({
     initialState:[],
     reducers:{
         add:()=>{
-
+            
         },
         remove:()=>{
 
