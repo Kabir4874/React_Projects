@@ -28,6 +28,7 @@ const Cart = () => {
             </div>
             <div>
               <p>Total Amount: ${totalAmount}</p>
+              <button>Checkout Now</button>
             </div>
           </div>
         </div>
