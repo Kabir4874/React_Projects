@@ -32,7 +32,8 @@ const HeroBanner = () => {
           <Img src={background} />
         </div>
       )}
-      <div className="wrapper">
+      <div className="opacity-layer"></div>
+      <ContentWrapper>
         <div className="heroBannerContent">
           <span className="title">Welcome</span>
           <span className="subTitle">
@@ -48,7 +49,7 @@ const HeroBanner = () => {
             <button>Search</button>
           </div>
         </div>
-      </div>
+      </ContentWrapper>
     </div>
   );
 };
