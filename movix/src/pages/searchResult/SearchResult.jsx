@@ -1,10 +1,7 @@
-import React from 'react'
-import './SearchResult.scss'
+import "./SearchResult.scss";
 
 const SearchResult = () => {
-  return (
-    <div>SearchResult</div>
-  )
-}
+  return <div>SearchResult</div>;
+};
 
-export default SearchResult
+export default SearchResult;
