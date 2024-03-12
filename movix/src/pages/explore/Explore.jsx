@@ -1,10 +1,7 @@
-
-import './Explore.scss'
+import "./Explore.scss";
 
 const Explore = () => {
-  return (
-    <div>Explore</div>
-  )
-}
+  return <div>Explore</div>;
+};
 
-export default Explore
+export default Explore;
