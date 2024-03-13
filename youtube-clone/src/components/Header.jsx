@@ -1,9 +1,12 @@
 import { useContext, useState } from "react";
 import { Context } from "../context/contextApi";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Loader from "../shared/Loader";
 import { CgClose } from "react-icons/cg";
 import { SlMenu } from "react-icons/sl";
+import ytLogo from "../images/yt-logo.png";
+import ytMobileLogo from "../images/yt-logo-mobile.png";
+import { IoIosSearch } from "react-icons/io";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -39,6 +42,22 @@ const Header = () => {
             )}
           </div>
         )}
+        <Link to="/" className="flex h-5 items-center">
+          <img
+            className=" h-full hidden dark:md:block"
+            src={ytLogo}
+            alt="Youtube"
+          />
+          <img className=" h-full md:hidden" src={ytMobileLogo} alt="Youtube" />
+        </Link>
+        <div className=" group flex items-center">
+          <div className="flex h-8 md:h-10 md:ml-10 border border-[#303030] rounded-l-3xl group-focus-within:border-blue-500 md:group-focus-within:ml-5 md:group-focus-within:pl-0">
+            <div className=" w-10 items-center justify-center hidden group-focus-within:md:flex">
+              <IoIosSearch className=" text-white text-xl" />
+            </div>
+            <input type="text"/>
+          </div>
+        </div>
       </div>
     </div>
   );
