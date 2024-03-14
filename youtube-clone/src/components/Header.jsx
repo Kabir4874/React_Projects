@@ -1,12 +1,16 @@
 import { useContext, useState } from "react";
 import { CgClose } from "react-icons/cg";
+import { FiBell } from "react-icons/fi";
 import { IoIosSearch } from "react-icons/io";
+import { RiVideoAddLine } from "react-icons/ri";
 import { SlMenu } from "react-icons/sl";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Context } from "../context/contextApi";
 import ytMobileLogo from "../images/yt-logo-mobile.png";
 import ytLogo from "../images/yt-logo.png";
 import Loader from "../shared/Loader";
+
+
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -67,6 +71,19 @@ const Header = () => {
         <button className=" w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]">
           <IoIosSearch className=" text-white text-xl" />
         </button>
+      </div>
+      <div className="flex items-center">
+        <div className="hidden md:flex">
+          <div className="flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]">
+              <RiVideoAddLine className=" text-white text-xl cursor-pointer"/>
+          </div>
+          <div className="flex items-center ml-2 justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]">
+              <FiBell className=" text-white text-xl cursor-pointer"/>
+          </div>
+          <div className=" flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
+            <img src="https://xsgames.co/randomusers/assets/avatars/male/32.jpg"/>
+          </div>
+        </div>
       </div>
     </div>
   );
