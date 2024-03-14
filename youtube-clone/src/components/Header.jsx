@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
-import { Context } from "../context/contextApi";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import Loader from "../shared/Loader";
 import { CgClose } from "react-icons/cg";
-import { SlMenu } from "react-icons/sl";
-import ytLogo from "../images/yt-logo.png";
-import ytMobileLogo from "../images/yt-logo-mobile.png";
 import { IoIosSearch } from "react-icons/io";
+import { SlMenu } from "react-icons/sl";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Context } from "../context/contextApi";
+import ytMobileLogo from "../images/yt-logo-mobile.png";
+import ytLogo from "../images/yt-logo.png";
+import Loader from "../shared/Loader";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -50,14 +50,23 @@ const Header = () => {
           />
           <img className=" h-full md:hidden" src={ytMobileLogo} alt="Youtube" />
         </Link>
-        <div className=" group flex items-center">
-          <div className="flex h-8 md:h-10 md:ml-10 border border-[#303030] rounded-l-3xl group-focus-within:border-blue-500 md:group-focus-within:ml-5 md:group-focus-within:pl-0">
-            <div className=" w-10 items-center justify-center hidden group-focus-within:md:flex">
-              <IoIosSearch className=" text-white text-xl" />
-            </div>
-            <input type="text"/>
+      </div>
+      <div className=" group flex items-center">
+        <div className="flex h-8 md:h-10 md:ml-10 border border-[#303030] rounded-l-3xl group-focus-within:border-blue-500 md:group-focus-within:ml-5 md:group-focus-within:pl-0">
+          <div className=" w-10 items-center justify-center hidden group-focus-within:md:flex">
+            <IoIosSearch className=" text-white text-xl" />
           </div>
+          <input
+            type="text"
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyUp={searchQueryHandler}
+            value={searchQuery}
+            className=" bg-transparent outline-none text-white pr-5 pl-5 md:pl-0 w-44 md:group-focus-within:pl-0 md:w-64 lg:w-[500px] "
+          />
         </div>
+        <button className=" w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]">
+          <IoIosSearch className=" text-white text-xl" />
+        </button>
       </div>
     </div>
   );
