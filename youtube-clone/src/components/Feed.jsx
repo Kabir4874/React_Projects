@@ -2,7 +2,7 @@ import LeftNav from "./LeftNav";
 
 const Feed = () => {
   return (
-    <div className="flex h-[calc(100% - 56px)]">
+    <div className="flex h-full">
       <LeftNav />
     </div>
   );
