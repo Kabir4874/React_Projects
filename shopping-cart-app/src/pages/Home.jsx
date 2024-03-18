@@ -33,7 +33,7 @@ const Home = () => {
         </div>
       ) : (
         <div className=" flex justify-center items-center">
-        <p>No Data Found</p>
+          <p>No Data Found</p>
         </div>
       )}
     </div>
