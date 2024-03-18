@@ -10,7 +10,6 @@ const CartItem = ({ item, itemIndex }) => {
     dispatch(remove(item.id));
     toast.error("Item Removed");
   };
-
   return (
     <div>
       <div>
