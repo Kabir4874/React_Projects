@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReactStars from "react-stars";
 
 const Cards = () => {
   const [data, setData] = useState([
@@ -21,8 +22,14 @@ const Cards = () => {
             <h1>
               <span className=" text-gray-500">Name:</span> {element.name}
             </h1>
-            <h1>
-              <span className=" text-gray-500">Rating:</span> {element.rating}
+            <h1 className=" flex items-center">
+              <span className=" text-gray-500 mr-1">Rating:</span>
+              <ReactStars
+                size={20}
+                half={true}
+                value={element.rating}
+                edit={false}
+              />
             </h1>
             <h1>
               <span className=" text-gray-500">Year:</span> {element.year}
