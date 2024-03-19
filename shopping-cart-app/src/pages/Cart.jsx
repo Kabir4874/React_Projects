@@ -10,16 +10,16 @@ const Cart = () => {
     setTotalAmount(cart.reduce((acc, curr) => acc + curr.price, 0));
   }, [cart]);
   return (
-    <div>
+    <div className=" w-full max-w-6xl h-full mx-auto">
       {cart.length > 0 ? (
-        <div>
-          <div>
+        <div className=" flex items-center justify-between gap-8 mt-8">
+          <div className="flex flex-col gap-4 w-2/3 ">
             {cart.map((item, index) => (
               <CartItem key={item.id} item={item} itemIndex={index} />
             ))}
           </div>
-          <div>
-            <div>
+          <div className=" flex justify-between flex-col gap-20">
+            <div className="">
               <div>Your Cart</div>
               <div>Summary</div>
               <p>
