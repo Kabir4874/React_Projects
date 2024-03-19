@@ -1,11 +1,14 @@
 import { useState } from "react";
-
+import { TailSpin } from "react-loader-spinner";
 const AddMovie = () => {
   const [form, setForm] = useState({
     title: "",
     year: "",
     description: "",
+    image: "",
   });
+
+  const [loading, setLoading] = useState(false);
   return (
     <div>
       <section className="text-gray-600 body-font relative">
@@ -58,6 +61,25 @@ const AddMovie = () => {
               <div className="p-2 w-full">
                 <div className="relative">
                   <label
+                    htmlFor="image"
+                    className="leading-7 text-sm text-gray-300"
+                  >
+                    Image Link
+                  </label>
+                  <input
+                    id="image"
+                    name="image"
+                    value={form.image}
+                    onChange={(e) =>
+                      setForm({ ...form, image: e.target.value })
+                    }
+                    className="w-full bg-slate-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-12 text-base outline-none text-gray-700 py-1 px-3 leading-6 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+              </div>
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <label
                     htmlFor="message"
                     className="leading-7 text-sm text-gray-300"
                   >
@@ -76,7 +98,7 @@ const AddMovie = () => {
               </div>
               <div className="p-2 w-full">
                 <button className="flex mx-auto text-white bg-green-600 border-0 py-2 px-8 focus:outline-none hover:bg-green-700 rounded text-lg">
-                  Submit
+                  {loading ? <TailSpin height={25} color="white" /> : "Submit"}
                 </button>
               </div>
             </div>
