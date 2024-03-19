@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { TailSpin } from "react-loader-spinner";
+import { addDoc } from "firebase/firestore";
+import { moviesRes } from "../firebase/firebase";
+import swal from "sweetalert";
 const AddMovie = () => {
   const [form, setForm] = useState({
     title: "",
@@ -9,6 +12,13 @@ const AddMovie = () => {
   });
 
   const [loading, setLoading] = useState(false);
+
+  const addMOvie = async () => {
+    await addDoc(moviesRes, form);
+    swal({
+        title:'Successfully Added'
+    })
+  };
   return (
     <div>
       <section className="text-gray-600 body-font relative">

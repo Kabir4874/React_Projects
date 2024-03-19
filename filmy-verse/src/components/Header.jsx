@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <div className=" text-3xl text-red-500 font-bold p-3 border-b-2 border-gray-500 flex justify-between">
+    <div className=" sticky top-0 z-10 header text-3xl text-red-500 font-bold p-3 border-b-2 border-gray-500 flex justify-between">
       <Link to={"/"}>
         <span className=" cursor-pointer">
           Filmy<span className=" text-white">Verse</span>
