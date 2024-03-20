@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
-import { FaFacebook, FaDribbble, FaTwitter, FaBars } from "react-icons/fa";
+import { FaBars, FaDribbble, FaFacebook, FaTwitter } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -57,6 +57,23 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+      <div>
+        <ul
+          className={`md:hidden px-4 py-6 mt-14 text-lg block space-y-4 bg-white ${
+            isMenuOpen
+              ? "fixed top-0 left-0 w-full transition-all ease-out duration-300"
+              : "hidden"
+          }`}
+        >
+          {navItems.map(({ path, link }, index) => (
+            <li key={index} className=" text-black">
+              <NavLink onClick={toggleMenu} to={path}>
+                {link}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 };
