@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa6";
+
 const Banner = () => {
   return (
     <div className=" px-4 py-32 bg-black mx-auto">
@@ -10,6 +13,14 @@ const Banner = () => {
           are passionate about sharing their stories and ideas. We offer
           everything you need to get started, from helpful tips and tutorials.
         </p>
+        <div>
+          <Link
+            to="/"
+            className=" font-medium hover:text-orange-500 inline-flex items-center py-1"
+          >
+            Learn More <FaArrowRight className=" mt-1 ml-2" />
+          </Link>
+        </div>
       </div>
     </div>
   );
