@@ -4,6 +4,13 @@ import BlogCards from "./BlogCards";
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
+
+  const [currentPage,setCurrentPage]= useState(1)
+
+  const pageSize= 12;
+
+  const [selectedCategory, setSelectedCategory]= useState(null);
+
   useEffect(() => {
     async function fetchBlogs() {
       const url = `http://localhost:5000/blogs`;
