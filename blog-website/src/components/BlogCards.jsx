@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 
-const BlogCards = ({ blogs }) => {
+const BlogCards = ({ blogs, currentPage, selectedCategory, pageSize }) => {
   const filteredBlogs = blogs;
   return (
     <div className=" grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
