@@ -1,6 +1,6 @@
 import {  Route, Link } from "react-router-dom"
 import { Layout, Typography, Space, Switch } from "antd"
-import Navbar from "./components/Navbar"
+import {Navbar} from './components';
 
 const App = () => {
   return (
