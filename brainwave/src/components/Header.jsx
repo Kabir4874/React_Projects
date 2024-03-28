@@ -7,13 +7,16 @@ import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
 const Header = () => {
   const pathName = useLocation();
-  const [openNavigation, setOpenNavigation] = useState(true);
+  const [openNavigation, setOpenNavigation] = useState(false);
   const toggleNavigation = () => {
     if (openNavigation) {
       setOpenNavigation(false);
     } else {
       setOpenNavigation(true);
     }
+  };
+  const handleClick = () => {
+    setOpenNavigation(false);
   };
   return (
     <div
@@ -27,7 +30,7 @@ const Header = () => {
         </a>
 
         <nav
-          className={`hidden fixed top-[5rem] left-0 ring-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent ${
+          className={` fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent ${
             openNavigation ? "flex" : "hidden"
           }`}
         >
@@ -43,12 +46,13 @@ const Header = () => {
                     ? "z-2 lg:text-n-1"
                     : " lg:text-n-1/50"
                 } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+                onClick={handleClick}
               >
                 {item.title}
               </a>
             ))}
-            <HamburgerMenu />
           </div>
+          <HamburgerMenu />
         </nav>
         <a
           href="#signup"
@@ -59,7 +63,11 @@ const Header = () => {
         <Button className="hidden lg:flex" href="#login">
           Sign in
         </Button>
-        <Button className="ml-auto lg:hidden" px="px-3">
+        <Button
+          className="ml-auto lg:hidden"
+          px="px-3"
+          onClick={toggleNavigation}
+        >
           <MenuSvg openNavigation={openNavigation} />
         </Button>
       </div>
