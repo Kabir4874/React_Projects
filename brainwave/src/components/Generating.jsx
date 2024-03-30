@@ -12,5 +12,4 @@ const Generating = ({ className }) => {
     </div>
   );
 };
-
 export default Generating;
