@@ -34,7 +34,6 @@ const Header = () => {
         <a href="#hero" className="block w-[12rem] xl:mr-8">
           <img src={brainwave} alt="Brainwave" width={190} height={40} />
         </a>
-
         <nav
           className={` fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent ${
             openNavigation ? "flex" : "hidden"
