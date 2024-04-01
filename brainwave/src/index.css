@@ -21,15 +21,12 @@
 .rotate-45 {
   @apply rotate-[45deg];
 }
-
 .rotate-90 {
   @apply rotate-[90deg];
 }
-
 .rotate-135 {
   @apply rotate-[135deg];
 }
-
 .rotate-180 {
   @apply rotate-[180deg];
 }
