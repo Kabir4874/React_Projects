@@ -1,9 +1,9 @@
-import { check, service1, service2 } from "../assets";
-import { brainwaveServices } from "../constants";
+import { check, service1, service2, service3 } from "../assets";
+import { brainwaveServices, brainwaveServicesIcons } from "../constants";
 import Generating from "./Generating";
 import Heading from "./Heading";
 import Section from "./Section";
-
+import { PhotoChatMessage } from "./design/Services";
 const Services = () => {
   return (
     <Section id="how-to-use">
@@ -60,6 +60,47 @@ const Services = () => {
                   Automatically enhance your photos using our AI app's photo
                   editing feature. Try in now!
                 </p>
+              </div>
+              <PhotoChatMessage />
+            </div>
+            <div className=" p-4 bg-n-7 overflow-hidden rounded-3xl lg:min-h-[46rem]">
+              <div className=" py-12 px-4 xl:px-8">
+                <h4 className=" h4 mb-4">Video Generation</h4>
+                <p className=" body-2 mb-8 text-n-3">
+                  The world's most powerful AI photo and video art generation
+                  engine. What will you create?
+                </p>
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item, index) => (
+                    <li
+                      className={` rounded-2xl flex items-center justify-center ${
+                        index === 2
+                          ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient rounded-2xl md:w-[4.5rem] md:h-[4.5rem]"
+                          : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                      key={index}
+                    >
+                      <div
+                        className={
+                          index === 2
+                            ? "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"
+                            : ""
+                        }
+                      >
+                        <img src={item} alt={item} width={24} height={24} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <img
+                  src={service3}
+                  className=" w-full h-full object-cover"
+                  width={520}
+                  height={400}
+                  alt="Scary robot"
+                />
               </div>
             </div>
           </div>
