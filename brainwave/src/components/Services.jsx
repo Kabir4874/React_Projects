@@ -3,7 +3,12 @@ import { brainwaveServices, brainwaveServicesIcons } from "../constants";
 import Generating from "./Generating";
 import Heading from "./Heading";
 import Section from "./Section";
-import { PhotoChatMessage } from "./design/Services";
+import { Gradient } from "./design/Hero";
+import {
+  PhotoChatMessage,
+  VideoBar,
+  VideoChatMessage,
+} from "./design/Services";
 const Services = () => {
   return (
     <Section id="how-to-use">
@@ -93,7 +98,7 @@ const Services = () => {
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className=" relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
                 <img
                   src={service3}
                   className=" w-full h-full object-cover"
@@ -101,9 +106,12 @@ const Services = () => {
                   height={400}
                   alt="Scary robot"
                 />
+                <VideoChatMessage />
+                <VideoBar />
               </div>
             </div>
           </div>
+          <Gradient />
         </div>
       </div>
     </Section>
